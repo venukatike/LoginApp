@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customRenders="clr-namespace:LoginApp.CustomRenders;assembly=LoginApp"
+             x:Class="LoginApp.View.Login">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray">
+            <Grid Style="{StaticResource UserGridStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*"/>
+                    <RowDefinition Height="0.3*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Style="{StaticResource HeaderStackStyle}" 
+                             Grid.Row="0" >
+                    <StackLayout>
+                        <Label Style="{StaticResource UsernameLabelStyle}"
+                               Text="{Binding [UsernameText], Source={StaticResource Localized}}"/>
+                        <Frame Style="{StaticResource UsernameFrameStyle}">
+                            <customRenders:CustomEntry Style="{StaticResource UsernameEntryStyle}"
+                                                       TextChanged="UserName_TextChanged"
+                                                       Text="{Binding Model.UserName}"
+                                                       Placeholder="{Binding [UserNamePlaceholderText], Source={StaticResource Localized}}"/>
+                        </Frame>
+                        <Label Style="{StaticResource UsernameErrorLableStyle}" 
+                               IsVisible="{Binding Model.IsUserNameErrorMessageVisible}" 
+                               Text="{Binding Model.UserNameErrorMsg}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label  Style="{StaticResource UsernameLabelStyle}"
+                                Text="{Binding [PasswordText], Source={StaticResource Localized}}"/>
+                        <Frame Style="{StaticResource UsernameFrameStyle}">
+                            <customRenders:CustomEntry Style="{StaticResource UsernameEntryStyle}"
+                                                   TextChanged="Password_TextChanged"
+                                                   Text="{Binding Model.Password}"
+                                                   Placeholder="{Binding [PasswordPlaceholderText], Source={StaticResource Localized}}"/>
+                        </Frame>
+                        <Label Style="{StaticResource UsernameErrorLableStyle}" 
+                               IsVisible="{Binding Model.IsPasswordErrorMessageVisible}" 
+                               Text="{Binding Model.PasswordErrorMsg}"/>
+
+                    </StackLayout>
+                    <Button Style="{StaticResource LoginButtonStyle}"
+                        Text="Login" 
+                         Command="{Binding LoginCommand}"/>
+                    <Label Style="{StaticResource ForgetPasswordLableStyle}" 
+                           Text="{Binding [ForgetPasswordText],Source={StaticResource Localized}}" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgetPasswordCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Label Style="{StaticResource SignupLableStyle}" 
+                           Text="{Binding [SignupText],Source={StaticResource Localized}}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SignUpCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

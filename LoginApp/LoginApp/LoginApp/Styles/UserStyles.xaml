@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customRenders="clr-namespace:LoginApp.CustomRenders;assembly=LoginApp"
+             x:Class="LoginApp.Styles.UserStyles" >
+
+    <Style x:Key="HeaderStackStyle" TargetType="StackLayout" >
+        <Setter Property="Spacing" Value="15" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="Padding" Value="20,20,20,0" />
+    </Style>
+
+    <Style x:Key="UserGridStyle" TargetType="Grid" >
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="UsernameLabelStyle" TargetType="Label" >
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="VerticalOptions" Value="StartAndExpand" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+    </Style>
+
+    <Style x:Key="UsernameFrameStyle" TargetType="Frame" >
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BackgroundColor" Value="White" />
+    </Style>
+
+    <Style x:Key="UsernameEntryStyle" TargetType="customRenders:CustomEntry" >
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="FontSize" Value="Small" />
+    </Style>
+
+    <Style x:Key="UsernameErrorLableStyle" TargetType="Label" >
+        <Setter Property="Margin" Value="3,0,0,0" />
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="FontSize" Value="Small" />
+    </Style>
+
+    <Style x:Key="LoginButtonStyle" TargetType="Button" >
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="CornerRadius" Value="5" />
+    </Style>
+
+    <Style x:Key="ForgetPasswordLableStyle" TargetType="Label" >
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextDecorations" Value="Underline" />
+    </Style>
+
+    <Style x:Key="SignupLableStyle" TargetType="Label" >
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Margin" Value="19" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextDecorations" Value="Underline" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+    </Style>
+
+
+</ResourceDictionary>
